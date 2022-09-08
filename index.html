@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock</title>
+</head>
+<body>
+
+    <script>
+
+
+function getComputerChoice(arr) {
+
+
+const randomIndex = Math.floor(Math.random() * arr.length);
+
+
+const item = arr[randomIndex];
+
+return item;
+}
+
+const array = ['rock','papper','scisor'];
+
+const result = getComputerChoice(array);
+console.log(result);
+
+
+
+function gameRound(playerSelection, computerSeceltion){
+   
+    let round = `you win ${playerSelection} beats ${computerSeceltion}`
+    let lost = 'you lost';
+    if (playerSelection === computerSeceltion) {
+        return "equality"}
+    if (playerSelection === 'rock' && computerSeceltion === 'scisor') {
+    return round } ;
+    if (playerSelection === 'scisor' && computerSeceltion === 'papper') {
+    return round} ;
+    if (playerSelection === 'papper' && computerSeceltion === 'rock') {
+    return round ;
+    } else { return lost} ;
+    } 
+    
+
+const computerSeceltion = result ;
+const playerSelection = 'rock' ;
+console.log(gameRound(playerSelection, computerSeceltion));
+
+for(let count = 0 ; count < 5; count ++){
+
+    let playerSelection = prompt('r, p , s');
+    let computerSeceltion = getComputerChoice();
+
+    console.log ('Computer plays ' + computerSeceltion)
+}
+
+
+      
+   
+
+        
+    
+
+ 
+
+    </script>
+    
+</body>
+</html>
