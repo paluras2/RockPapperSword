@@ -46,15 +46,16 @@ function gameRound(playerSelection, computerSeceltion){
     
 
 const computerSeceltion = result ;
-const playerSelection = 'rock' ;
+const playerSelection = '' ;
 console.log(gameRound(playerSelection, computerSeceltion));
 
 for(let count = 0 ; count < 5; count ++){
 
     let playerSelection = prompt('r, p , s');
-    let computerSeceltion = getComputerChoice();
+    let computerSeceltion = result;
 
     console.log ('Computer plays ' + computerSeceltion)
+    gameRound (playerSelection, result);
 }
 
 
