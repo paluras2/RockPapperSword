@@ -10,62 +10,73 @@
 
     <script>
 
+ //Im  defining this so I the computer can pick from the array
+ const rpsArray = ["rock", "paper", "scissors"];
 
-function getComputerChoice(arr) {
+var tie = 0;
+var player = 0;
+var computer = 0;
 
 
-const randomIndex = Math.floor(Math.random() * arr.length);
-
-
-const item = arr[randomIndex];
-
-return item;
+// Computer random pick
+function computerPlay() {
+   return rpsArray[Math.floor(Math.random() * rpsArray.length)];
 }
 
-const array = ['rock','papper','scisor'];
-
-const result = getComputerChoice(array);
-
-
-
-//Look into reference code again and learn again more
-function gameRound(playerSelection, computerSeceltion){
-   
-    let round = `You win ${playerSelection} beats ${computerSeceltion}`
-    let lost = 'You lost';
-    if (playerSelection === computerSeceltion) {
-        return "equality"}
-    if (playerSelection === 'rock' && computerSeceltion === 'scisor') {
-    return round } ;
-    if (playerSelection === 'scisor' && computerSeceltion === 'papper') {
-    return round} ;
-    if (playerSelection === 'papper' && computerSeceltion === 'rock') {
-    return round ;
-    } else { return lost} ;
-    } 
-    
-
-const computerSeceltion = result ;
-const playerSelection = '' ;
-
-
-for(let count = 0 ; count < 5; count ++){
-
-    let playerSelection = prompt('r, p , s');
-    let computerSeceltion = result;
-
-    console.log ('Computer plays ' + computerSeceltion)
-    gameRound (playerSelection, result);
+function playRound (playerSelection, computerSelection){
+            if (playerSelection == computerSelection){
+                tie++;
+                return console.log("Tie!");
+            } else if (playerSelection == "rock" && computerSelection == "scissors"){
+                player++;
+                return console.log("You win! Rock beats Scissors");
+            } else if (playerSelection == "rock" && computerSelection == "paper"){
+                computer++;
+                return console.log("You lose! Paper beats Rock!");
+            } else if (playerSelection == "scissors" && computerSelection == "paper"){
+                player++;
+                return console.log("You win! Scissors beats Paper!");
+            } else if (playerSelection == "scissors" && computerSelection == "rock"){
+                computer++;
+                return console.log("You lose! Rock beats Scissors");
+            } else if (playerSelection == "paper" && computerSelection == "scissors"){
+                computer++;
+                return console.log("You lose! Scissors beats Paper!");
+            } else if (playerSelection == "paper" && computerSelection == "rock"){
+                player++;
+                return console.log("You win! Paper beats Rock!");
+            } else { 
+            	console.log("You need to chose from Rock, Paper and Scissors!!");
+            }  
 }
 
+//Final result comparison
+function result(){
+	if  ((tie > player) && (tie > computer)){
+  	console.log("Its a tie! Nobody wins.")
+  } 
+  else if (player > computer){
+  	console.log("You win! Never though this would happend...")
+  } 
+  else {
+  	console.log("HAHAHA, You loser!!")
+  }
+}
 
-      
+//Will play the game for 5 rounds
+for(let count = 0; count < 5; count++){
+	// Player Selection and Computer selection
+  let playerSelection = prompt("Rock, Paper or Scissors?");
+  let computerSelection = computerPlay();
+
+  console.log ("Computer plays " + computerSelection);
+  
+  //Function call: Plays a round of a game
+  playRound (playerSelection, computerSelection);
+
+}
+
 result();
-
-        
-    
-console.log(result)
- 
 
     </script>
     
