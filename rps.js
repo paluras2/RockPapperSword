@@ -11,8 +11,8 @@ choiceBtn.forEach(button => button.addEventListener("click", ()=>
 {
     playerVar=button.textContent;
     computerTurn();
-    playerText.textContent= `Player :${playerVar}`;
-    computerText.textContent= `Computer :${computerVar}`;
+    playerText.textContent= `Player :  ${playerVar}`;
+    computerText.textContent= `Computer :  ${computerVar}`;
     resultText.textContent= winners()
 }))
 
@@ -34,18 +34,18 @@ function computerTurn(){
 
 function winners(){
     if (playerVar === computerVar){
-        return "Tie";
+        return "Tie, Nobody wins.";
     }else if (playerVar == "Rock" && computerVar == "Paper"){
-        return "Lost";
+        return "Bad move, You lost";
     }else if (playerVar == "Scissor" && computerVar == "Rock"){
-            return "Lost";
+            return "Bad move, You lost";
     }else if (playerVar == "Paper" && computerVar == "Scissor"){
-            return "Lost";
+            return "Bad move, You lost";
     }else if (playerVar == "Scissor" && computerVar == "Paper"){
-            return "Win";
+            return "Congrats, you won";
     }else if (playerVar == "Rock" && computerVar == "Scissor"){
-            return "Win";
+            return "Congrats, you won";
     }else if (playerVar == "Paper" && computerVar == "Rock"){
-            return "Win";
+            return "Congrats, you won";
 }
 }
