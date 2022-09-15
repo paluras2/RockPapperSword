@@ -19,6 +19,9 @@ background-image: url("background.jpg");
     display: flex;
     justify-content: space-around;
 }
+#playerText{
+    text-align: center;
+}
 
 #resultText{
     text-align: center;
