@@ -1,0 +1,45 @@
+
+
+
+body{
+   display: flex;
+   flex-direction: column;
+   font-family: monaco, Consolas, Lucida Console, monospace;
+background-image: url("background.jpg");
+ background-color: #ffbcbc49;
+}
+.title{
+    text-align: center;
+    font-size: 43px;
+    font-weight: bolder;
+    padding: 43px;
+} 
+
+.cAndP{
+    display: flex;
+    justify-content: space-around;
+}
+
+#resultText{
+    text-align: center;
+}
+
+.addButton{
+    justify-items: center;
+}
+.choiceBtn{display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: rgb(46, 19, 19);
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+#resultText{
+    padding: 30px;
+    margin-top: 100px;
+}
